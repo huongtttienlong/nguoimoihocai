@@ -1,0 +1,77 @@
+/* Admin dashboard — kế thừa style.css (biến màu, font) */
+
+body.admin-body {
+  background: var(--pink-pale);
+}
+
+.admin-header {
+  background: linear-gradient(120deg, var(--pink), var(--pink-deep));
+  padding: 22px 0;
+}
+.admin-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.admin-header .brand { color: var(--white); }
+.admin-header .back-link { color: var(--pink-pale); font-size: .85rem; font-weight: 600; text-decoration: none; }
+.admin-header .back-link:hover { color: var(--white); }
+
+.admin-wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 24px 80px; }
+
+.config-bar {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 26px;
+}
+.config-bar label { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
+.config-bar input {
+  flex: 1; min-width: 220px;
+  padding: 11px 14px; border-radius: 10px;
+  border: 1px solid var(--pink-soft);
+  font-family: 'Arimo'; font-size: .88rem; color: var(--ink);
+}
+.config-bar .status-pill {
+  font-size: .75rem; font-weight: 700; padding: 6px 12px; border-radius: 100px;
+}
+.status-pill.connected { background: rgba(22,196,127,.14); color: #0d8f5c; }
+.status-pill.demo { background: rgba(255,209,102,.28); color: #8a6100; }
+.status-pill.error { background: rgba(255,45,149,.14); color: var(--pink-deep); }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 26px; }
+.kpi-card { background: var(--white); border-radius: var(--radius-md); padding: 22px; box-shadow: var(--shadow-soft); }
+.kpi-card .kpi-label { font-size: .78rem; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .04em; }
+.kpi-card .kpi-value { font-family: 'Anton'; font-size: 2.1rem; color: var(--pink-deep); margin: 6px 0 2px; }
+.kpi-card .kpi-sub { font-size: .78rem; color: var(--ink-soft); }
+
+.panel { background: var(--white); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-soft); margin-bottom: 26px; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+.panel-head h2 { font-family: 'Arimo'; text-transform: none; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+
+.chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 180px; }
+.chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px; }
+.chart-col .bar { width: 100%; max-width: 26px; background: linear-gradient(180deg, var(--pink), var(--pink-deep)); border-radius: 6px 6px 2px 2px; min-height: 2px; }
+.chart-col .bar-label { font-size: .62rem; color: var(--ink-soft); writing-mode: horizontal-tb; }
+.chart-col .bar-val { font-size: .68rem; font-weight: 700; color: var(--pink-deep); }
+
+.table-tools { display: flex; gap: 10px; align-items: center; }
+.table-tools input { padding: 9px 14px; border-radius: 100px; border: 1px solid var(--pink-soft); font-family: 'Arimo'; font-size: .85rem; min-width: 200px; }
+.btn-sm { padding: 9px 16px; font-size: .82rem; }
+
+.leads-table-wrap { overflow-x: auto; }
+table.leads-table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+table.leads-table th { text-align: left; padding: 10px 12px; color: var(--ink-soft); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; border-bottom: 2px solid var(--pink-pale); }
+table.leads-table td { padding: 12px; border-bottom: 1px solid var(--pink-pale); color: var(--ink); }
+table.leads-table tr:hover td { background: var(--pink-pale); }
+.empty-state { text-align: center; padding: 40px 20px; color: var(--ink-soft); }
+.empty-state .empty-icon { font-size: 2.4rem; margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .chart-col .bar-label { display: none; }
+}
