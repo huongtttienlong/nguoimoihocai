@@ -148,9 +148,11 @@ nav.main-nav a:hover { color: var(--gold); }
 }
 .hero .subhead {
   color: var(--pink-pale);
-  font-size: clamp(1.02rem, 2vw, 1.2rem);
-  max-width: 620px;
+  font-size: clamp(1rem, 1.9vw, 1.14rem);
+  line-height: 1.6;
+  max-width: 780px;
   margin: 0 auto 30px;
+  text-align: center;
 }
 .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 34px; }
 .hero-trust { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
