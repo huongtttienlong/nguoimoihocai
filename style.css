@@ -159,13 +159,19 @@ nav.main-nav a:hover { color: var(--gold); }
 
 .hero-visual {
   margin: 54px auto 0;
-  max-width: 920px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
-.hero-visual .ph-card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-.hero-visual .ph-card:nth-child(4) { grid-column: span 2; }
+.hero-visual .ph-card {
+  aspect-ratio: 4 / 5;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.hero-visual .ph-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(43, 10, 28, 0.24);
+}
 
 /* ---------- PLACEHOLDER IMAGE CARDS (chuẩn tỉ lệ đồng nhất) ---------- */
 .ph-card {
@@ -340,8 +346,7 @@ footer .admin-link { color: rgba(255,255,255,.5); }
   .reason-grid { grid-template-columns: 1fr; }
   .template-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-grid { grid-template-columns: 1fr; }
-  .hero-visual { grid-template-columns: repeat(2, 1fr); }
-  .hero-visual .ph-card:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  .hero-visual { grid-template-columns: repeat(2, 1fr); max-width: 460px; }
 }
 @media (max-width: 720px) {
   nav.main-nav { position: fixed; top: 72px; left: 0; right: 0; background: var(--pink-deep); flex-direction: column; padding: 20px 24px; gap: 16px; transform: translateY(-120%); transition: transform .2s ease; }
